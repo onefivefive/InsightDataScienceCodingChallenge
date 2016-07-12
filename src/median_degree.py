@@ -70,6 +70,8 @@ class LinkedList:
 		"""Find the node in the linked list after which the new node should be inserted."""
 		if node.ptime<self.head.ptime:
 			return None
+		if node.ptime>=self.tail.ptime:
+			return self.tail
 		np=self.head
 		while np.next and node.ptime>=np.next.ptime:
 			np=np.next
